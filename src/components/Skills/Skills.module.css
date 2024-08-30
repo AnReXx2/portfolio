@@ -1,0 +1,130 @@
+.skills {
+  width: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  border-top: 5px solid #fff;
+  background: #030712;
+}
+
+.skillCont {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+.skill {
+  width: 90px;
+  height: 90px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  background: #111827;
+  border-radius: 25%;
+}
+
+.img {
+  width: 64px;
+  height: 64px;
+}
+
+.linux {
+  width: 40px;
+  height: 40px;
+}
+
+.tailwind {
+  width: 64px;
+  height: 64px;
+}
+
+.skillTail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.skill,
+.tailSkill {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill:hover,
+.tailSkill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tailSkill {
+  width: 90px;
+  height: 90px;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background: #111827;
+  border-radius: 25%;
+}
+
+.skill,
+.tailSkill {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill::before,
+.tailSkill::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-45deg);
+  transition: left 0.3s ease;
+  opacity: 0;
+}
+
+.skill:hover::before,
+.tailSkill:hover::before {
+  animation: shiny-effect 1.5s forwards;
+  opacity: 1;
+}
+
+.skill:hover,
+.tailSkill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes shiny-effect {
+  0% {
+    left: -150%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  50% {
+    left: 50%;
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    left: 150%;
+    opacity: 0;
+  }
+}
